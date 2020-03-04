@@ -26,7 +26,6 @@ const palette = createMuiTheme({
     },
   },
 });
-const themeName = 'IndigoTheoryTheme';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,7 +43,6 @@ const useStyles = makeStyles(theme => ({
 export default function ButtonAppBar() {
   const classes = useStyles();
 
-  
   return (
     <div className={classes.root}>
       <ThemeProvider theme={palette}>
