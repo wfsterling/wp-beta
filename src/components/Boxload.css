@@ -1,0 +1,23 @@
+.tf-white, 
+.MuiInputBase-input {
+    color: white!important;
+    border-color: white!important;
+}
+
+.MuiInputLabel-root,
+.MuiInputAdornment-root,
+.MuiInputAdornment-root .MuiSvgIcon-root {
+    color: white!important;
+}
+
+.MuiInput-underline:before {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42)!important;
+}
+.MuiInput-underline:after {
+    border-color: white!important;
+}
+
+.formLoc {
+    /* flex-basis: 50%; */
+    flex-grow: 5;
+}
