@@ -1,32 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Boxload from './components/Boxload';
 
-function App() {
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
+
+
+
+export default function ButtonAppBar() {
+  const classes = useStyles();
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+        <img src={require('./images/wolf-pack-white.png')} alt="WolfPack Logo of two wolves" className="wolf-logo-header"/>
+        <Boxload/>
+        {/* <Button color="inherit" className="login-btn-header">Login</Button> */}
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <MenuIcon />
+        </IconButton>
+        </Toolbar>
+      </AppBar>
+      
     </div>
   );
 }
-
-export default App;
