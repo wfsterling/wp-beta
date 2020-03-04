@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wolf Pack
 
-## Available Scripts
+## "You can't help those who want to be homeless, like most of those down on that street."
+Denver Resident
 
-In the project directory, you can run:
+## Overview
+Many people tend to believe that homeless people are lazy, drug addicted, and make the choice to be unemployed. These stereotypes occasionally hold merit, but can often be untrue. Research shows that the majority of homeless people actually have a desire to work and are actively pursuing work opportunities or already work one or more jobs.
 
-### `npm start`
+Someone facing homelessness experiences a number of challenges that prevent them from transitioning to a more stable life. Without a bank account or a permanent address, the options for saving money and getting a legitimate job are drastically reduced. When your entire life is in a grocery cart and you face the risk of theft from other homeless, getting back on your feet can seem impossible. These hurdles are just part of what contributes to the vicious cycle of __chronic homelessness.__
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Problem
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Vulnerable to wage theft
+- No physical permanent address for bank applications, rent applications or job prospects
+- No identification or proof of social security number
+- Mental or behavioral disorders
+- Learned helplessness theory
+- No way to save or store assets
+- Existing outside of society
 
-### `npm test`
+## Solution
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### RESEARCH
 
-### `npm run build`
+**7** | **2** | **3** | **3** | **3** | **100**
+--- | --- | --- | --- | --- | --- |
+Nonprofit interviews | Survey Collections | Blockchain Conferences | Case Studies | City Council Meetings | Hours of research
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### THEORY
+- Give the homeless population empowerment and self reliance through an accessible tokenized economy.
+- Adapt a "home-first" approach coupled with the appropriate mental, medical and social support needed.
+- Learn from those in the community who are already successful
+- Build a platform that allows everyone to succeed.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### IDEA
+- Build a tokenized gig economy for the homeless that provide them with a method of identification.
+- Create a crypto wallet to store assets that can not be converted into cash with restrictions similar to SNAP but with more buying potential.
+- Enable users to create a work history.
+- Use blockchain to prevent wage theft.
+- Engage with the local community and government to change the perceptions of the homeless 
