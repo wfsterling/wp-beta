@@ -1,36 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Web3 from 'web3';
-import GetEthBalance from './GetEthBalance';
+// import GetEthBalance from './GetEthBalance';
 
-const web3 = new Web3(Web3.givenProvider || "ws://localhost:3000");
+class GetEthAddress extends Component {
+  async componentWillMount() {
+    await this.loadWeb3()
+    await this.loadBlockchainData()
+  }
+
+  async loadWeb3() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    }
+    else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider)
+    }
+    else {
+      window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+    }
+  }
 
 
-const GetEthAddress = () => {
-  // Init the State
-  const [data, setData] = useState('not loaded');
-  // Define the order of actions
-  useEffect( () => {
-    const fetchData = async () => {
-      // Set the Account Array when available
-      const web3Accounts = await web3.eth.getAccounts();
-      setData(web3Accounts)
-      console.log(`accounts`, web3Accounts)
-    };
-    fetchData();
-  }, []);
+
+  async loadBlockchainData() {
+    const web3 = window.web3
+    // Get address
+    const accounts = await web3.eth.getAccounts()
+    this.setState({ account: accounts[0] })
+    console.log(`account:`, this.state.account);
 
 
+    web3.eth.getBalance(this.state.account, (err, wei) => {
+      const tempBalance = web3.utils.fromWei(wei, 'ether')
+      console.log('balance:', tempBalance);
+      this.setState({ balance: tempBalance})
+    })
+  }
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      daiTokenMock: null,
+      balance: 0,
+      transactions: []
+    }
 
-  return (
+    // this.transfer = this.transfer.bind(this)
+  }
+  render(){
+    return (
     
-    <Typography variant="h4">
-      <GetEthBalance
-        ethAddress = {data}
-      />
-    </Typography>
-      
-  );
+      <Typography variant="h4">
+        ${this.state.balance}
+      </Typography>
+        
+    );
+  }
+  
 }
 
 
