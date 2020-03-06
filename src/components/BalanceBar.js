@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import BalanceValue from './BalanceValue';
+import GetEthAddress from './GetEthAddress';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,7 +44,7 @@ const BalanceBar = () => {
           </Typography>
         </Grid>
         <Grid item xs={4} sm={6} className={classes.balanceValue}>
-          <BalanceValue/>
+          <GetEthAddress/>
         </Grid>
       </Grid>
     </div>

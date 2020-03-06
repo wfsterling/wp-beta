@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Typography from '@material-ui/core/Typography';
 import Web3 from 'web3';
+import GetEthBalance from './GetEthBalance';
 
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:3000");
 
 
-const BalanceValue = () => {
+const GetEthAddress = () => {
   // Init the State
   const [data, setData] = useState('not loaded');
   // Define the order of actions
@@ -19,23 +20,18 @@ const BalanceValue = () => {
     fetchData();
   }, []);
 
-  const web3Accounts = web3.eth.getAccounts();
-  web3Accounts.then((accounts) => {
-    const tempAccount = accounts[0];
-    const tempBalance = web3.eth.getBalance(tempAccount)
-    console.log(`value`, tempBalance)
-    // setData(tempBalance);
-  })
 
 
   return (
     
     <Typography variant="h4">
-      ${data}
+      <GetEthBalance
+        ethAddress = {data}
+      />
     </Typography>
       
   );
 }
 
 
-export default BalanceValue
+export default GetEthAddress
