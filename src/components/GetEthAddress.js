@@ -42,9 +42,7 @@ class GetEthAddress extends Component {
     super(props)
     this.state = {
       account: '',
-      daiTokenMock: null,
-      balance: 0,
-      transactions: []
+      balance: 0
     }
 
     // this.transfer = this.transfer.bind(this)
