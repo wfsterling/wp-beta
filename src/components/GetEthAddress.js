@@ -51,7 +51,7 @@ class GetEthAddress extends Component {
     return (
     
       <Typography variant="h4">
-        ${this.state.balance}
+        {this.state.balance} ETH
       </Typography>
         
     );
