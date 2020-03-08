@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
+import GigCard from './GigCard';
 
+
+const divStyle = {
+  padding: '.6em',
+  display: 'Grid',
+  gridTemplateColumns: '1fr 1fr',
+  gridColumnGap: '.6em',
+  gridRowGap: '.6em',
+}
 // Read whole spreadsheet
 class ReadSheets extends Component {
   constructor(props) {
@@ -22,18 +31,27 @@ class ReadSheets extends Component {
   }
 
   renderData() {
+
     return this.state.data.map((row) =>
     // Get Comments from Google Sheet
       // <div key={row.id}>{row.address} {row.date} {row.comment} {row.rating}</div>
     // Get Gigs from Google Sheet
-     <div key={row.id}>{row.business_name} {row.hourly_rate} {row.category} {row.description} {row.details} {row.rating}</div>
+    // <div key={row.id}>{row.business_name} {row.hourly_rate} {row.category} {row.description} {row.details} {row.rating}</div>
+
+      <GigCard
+        business= {row.business_name}
+        rate= {row.hourly_rate}
+        category= {row.category}
+        description= {row.description}
+      />
     );
   }
 
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         {this.renderData()}
+        
       </div>
     );
   }
