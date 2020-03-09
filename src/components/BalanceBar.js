@@ -11,6 +11,12 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
     backgroundColor: "#6CC9CD",
   },
+  textSize: {
+    fontSize: '32px',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.2rem',
+    },
+  },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
@@ -38,12 +44,12 @@ const BalanceBar = () => {
   return (
     <div className={classes.root}>
       <Grid container spacing={3} className={classes.balanceGrid}>
-        <Grid item xs={8} sm={6} className={classes.balanceTitle}>
-          <Typography variant="h4" gutterBottom>
+        <Grid item sm={4} className={classes.balanceTitle}>
+          <Typography variant="h4" gutterBottom className={classes.textSize}>
             Balance
           </Typography>
         </Grid>
-        <Grid item xs={4} sm={6} className={classes.balanceValue}>
+        <Grid item sm={8} className={classes.balanceValue}>
           <GetEthAddress/>
         </Grid>
       </Grid>
