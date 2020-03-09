@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
 import GigCard from './GigCard';
 
 
 const divStyle = {
-  padding: '.6em',
-  display: 'Grid',
-  gridTemplateColumns: '1fr 1fr',
-  gridColumnGap: '.6em',
-  gridRowGap: '.6em',
+  padding: '1.2em',
 }
 // Read whole spreadsheet
 class ReadSheets extends Component {
@@ -49,10 +46,10 @@ class ReadSheets extends Component {
 
   render() {
     return (
-      <div style={divStyle}>
+      <Grid container spacing={3} style={divStyle}>
         {this.renderData()}
         
-      </div>
+      </Grid>
     );
   }
 }
