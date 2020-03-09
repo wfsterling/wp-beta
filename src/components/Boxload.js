@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Boxload.css';
+import './Boxload.scss';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Web3 from 'web3';
-// import GetEthBalance from './GetEthBalance';
+import '../styles/variables.scss';
+import './GetEthAddress.scss';
 
 class GetEthAddress extends Component {
   async componentWillMount() {
@@ -21,8 +22,6 @@ class GetEthAddress extends Component {
       window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
     }
   }
-
-
 
   async loadBlockchainData() {
     const web3 = window.web3
@@ -49,11 +48,14 @@ class GetEthAddress extends Component {
   }
   render(){
     return (
-    
-      <Typography variant="h4">
-        {this.state.balance} ETH
+      <span>
+      <Typography variant="h4" className="balance-text">
+        {this.state.balance} 
       </Typography>
-        
+      <Typography variant="h4" className="balance-text">
+        ETH
+      </Typography>
+      </span>
     );
   }
   

@@ -1,0 +1,16 @@
+// @import '../styles/variables.scss';
+
+.balance-text {
+    font-size: 32px;
+    display: inline-block;
+    max-width: 7em;
+    overflow: hidden;
+
+    @media screen and (max-width: 640px){
+        font-size: 1.2em!important;
+        max-width: 6em;
+    }
+    & + .balance-text {
+        margin-left: .6em;
+    }
+}

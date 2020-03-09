@@ -28,7 +28,6 @@ class ReadSheets extends Component {
   }
 
   renderData() {
-
     return this.state.data.map((row) =>
     // Get Comments from Google Sheet
       // <div key={row.id}>{row.address} {row.date} {row.comment} {row.rating}</div>
