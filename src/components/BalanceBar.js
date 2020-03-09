@@ -11,6 +11,11 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
     backgroundColor: "#6CC9CD",
   },
+  textSize: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+    },
+  },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
@@ -39,7 +44,7 @@ const BalanceBar = () => {
     <div className={classes.root}>
       <Grid container spacing={3} className={classes.balanceGrid}>
         <Grid item xs={8} sm={6} className={classes.balanceTitle}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom className={classes.textSize}>
             Balance
           </Typography>
         </Grid>
