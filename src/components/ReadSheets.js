@@ -35,10 +35,11 @@ class ReadSheets extends Component {
     // <div key={row.id}>{row.business_name} {row.hourly_rate} {row.category} {row.description} {row.details} {row.rating}</div>
 
       <GigCard
-        business= {row.business_name}
-        rate= {row.hourly_rate}
-        category= {row.category}
-        description= {row.description}
+        key={row.business_name}
+        business={row.business_name}
+        rate={row.hourly_rate}
+        category={row.category}
+        description={row.description}
       />
     );
   }

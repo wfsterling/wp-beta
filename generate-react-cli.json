@@ -1,0 +1,17 @@
+{
+  "component": {
+    "path": "src/components",
+    "css": {
+      "preprocessor": "scss",
+      "module": false,
+      "withStyle": true
+    },
+    "test": {
+      "library": "None",
+      "withTest": false
+    },
+    "withStory": false,
+    "withLazy": false
+  },
+  "usesTypeScript": false
+}
