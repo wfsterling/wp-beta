@@ -2,8 +2,9 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 import {createStore, applyMiddleware} from 'redux';
-import rootReducer from '../reducers';
-
+import rootReducer from './redux';
+import Navbar from "./components/ui/navbar/Navbar";
+import './AppContainer.scss';
 
 const configureStore = (initialState) => {
     const enhancers = applyMiddleware(logger);
@@ -14,7 +15,7 @@ const store = configureStore({});
 
 const AppContainer = () => (
     <Provider store={store}>
-        <App/>
+        <Navbar></Navbar>
     </Provider>
 );
 

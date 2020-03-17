@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Web3 from 'web3';
-import '../styles/variables.scss';
+import '../../styles/variables.scss';
 import './GetEthAddress.scss';
 
 class GetEthAddress extends Component {

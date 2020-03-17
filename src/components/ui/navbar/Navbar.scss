@@ -1,0 +1,26 @@
+.navbar {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(#009fb2, #000794);
+}
+
+.navbar-container{
+  //width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+  font-size: 1.5em;
+
+  .fa{
+    cursor: pointer;
+  }
+}
+
+.navbar-image{
+  opacity: 0.5;
+  max-height: 100%;
+  height: 250px;
+  margin-top: -40px;
+}
+

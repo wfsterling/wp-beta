@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {Provider} from "react-redux";
+import logger from 'redux-logger';
+import {createStore, applyMiddleware} from 'redux';
+import rootReducer from './redux';
+import AppContainer from "./AppContainer";
+
+const configureStore = (initialState) => {
+    const enhancers = applyMiddleware(logger);
+    return createStore(rootReducer, initialState, enhancers);
+};
+
+const store = configureStore({});
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <AppContainer />
     </Provider>
     , document.getElementById('root'));
 
