@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Navbar.scss';
 import 'font-awesome/css/font-awesome.min.css';
 

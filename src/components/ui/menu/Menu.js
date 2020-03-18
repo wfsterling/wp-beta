@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './menu.scss';
+import './Menu.scss';
 
-const menu = () => (
+const Menu = () => (
   <div className="menu">
     menu Component
   </div>
 );
 
-menu.propTypes = {};
+Menu.propTypes = {};
 
-menu.defaultProps = {};
+Menu.defaultProps = {};
 
-export default menu;
+export default Menu;
