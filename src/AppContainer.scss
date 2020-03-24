@@ -1,10 +1,12 @@
-html, body{
-  height: 100%;
+html{
+  min-height: 100vh;
   width: 100%;
 }
 
 body{
-  //background-color: #aaa;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 * {
@@ -114,4 +116,13 @@ body{
 .full-center{
   width: 100%;
   text-align: center;
+}
+
+a{
+  color: #0ab9ba;
+  text-decoration: none;
+}
+
+.content-wrapper{
+  flex: 1;
 }

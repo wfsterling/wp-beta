@@ -8,6 +8,7 @@ import './AppContainer.scss';
 // import Route from "react-router-dom/es/Route";
 // import Login from "./components/pages/Login/Login";
 import Work from "./components/pages/Work/Work";
+import Footer from "./components/ui/footer/Footer";
 
 const configureStore = (initialState) => {
     const enhancers = applyMiddleware(logger);
@@ -20,7 +21,8 @@ const AppContainer = () => (
     <Provider store={store}>
         {/*<Router>*/}
             <Navbar/>
-            <Work workItems={workItems}/>
+            <div className='content-wrapper'>
+                <Work workItems={workItems}/>
             {/*<Switch>*/}
             {/*    <Route path="/">*/}
             {/*        <Login/>*/}
@@ -29,6 +31,8 @@ const AppContainer = () => (
             {/*        <Work/>*/}
             {/*    </Route>*/}
             {/*</Switch>*/}
+            </div>
+            <Footer/>
         {/*</Router>*/}
     </Provider>
 );
