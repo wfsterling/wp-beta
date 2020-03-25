@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './WorkItem.scss';
 
 function WorkItem(props) {
-    console.log(props)
 
     return <div className="work-item">
         <div>

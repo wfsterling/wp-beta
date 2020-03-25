@@ -1,0 +1,18 @@
+.nav-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button{
+  background-color: #030381;
+  color: white;
+  margin: 10px;
+  padding: 6px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.nav-button-active {
+  background-color: #7045b7 !important;
+}

@@ -1,40 +1,32 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import logger from 'redux-logger';
-import {createStore, applyMiddleware} from 'redux';
-import rootReducer from './redux';
 import Navbar from "./components/ui/navbar/Navbar";
 import './AppContainer.scss';
-// import Route from "react-router-dom/es/Route";
-// import Login from "./components/pages/Login/Login";
 import Work from "./components/pages/Work/Work";
 import Footer from "./components/ui/footer/Footer";
-
-const configureStore = (initialState) => {
-    const enhancers = applyMiddleware(logger);
-    return createStore(rootReducer, initialState, enhancers);
-};
-
-const store = configureStore({});
+import NavButtons from "./components/ui/nav-buttons/NavButtons";
+import {Route, Switch} from "react-router-dom";
 
 const AppContainer = () => (
-    <Provider store={store}>
-        {/*<Router>*/}
-            <Navbar/>
-            <div className='content-wrapper'>
-                <Work workItems={workItems}/>
-            {/*<Switch>*/}
-            {/*    <Route path="/">*/}
-            {/*        <Login/>*/}
-            {/*    </Route>*/}
-            {/*    <Route path="/work">*/}
-            {/*        <Work/>*/}
-            {/*    </Route>*/}
-            {/*</Switch>*/}
-            </div>
-            <Footer/>
-        {/*</Router>*/}
-    </Provider>
+    <React.Fragment>
+        <Navbar/>
+        <NavButtons/>
+        <div className='content-wrapper'>
+            <Switch>
+                <Route exact path="/">
+                    <div>Home page</div>
+                    {/*<Work workItems={workItems}/>*/}
+                </Route>
+                <Route exact path="/work">
+                     <Work workItems={workItems}/>
+                </Route>
+                <Route path="/sell">
+                    <div>sell page</div>
+                </Route>
+            </Switch>
+        </div>
+        <Footer/>
+
+    </React.Fragment>
 );
 
 export default AppContainer;

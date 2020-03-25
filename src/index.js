@@ -4,20 +4,25 @@ import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import logger from 'redux-logger';
-import {createStore, applyMiddleware} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import rootReducer from './redux';
 import AppContainer from "./AppContainer";
+import {BrowserRouter as Router,} from "react-router-dom";
 
 const configureStore = (initialState) => {
     const enhancers = applyMiddleware(logger);
     return createStore(rootReducer, initialState, enhancers);
 };
 
-const store = configureStore({});
+const store = configureStore({
+
+});
 
 ReactDOM.render(
     <Provider store={store}>
-        <AppContainer />
+        <Router>
+            <AppContainer />
+        </Router>
     </Provider>
     , document.getElementById('root'));
 
