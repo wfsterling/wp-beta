@@ -5,6 +5,7 @@ import Work from "./components/pages/Work/Work";
 import Footer from "./components/ui/footer/Footer";
 import NavButtons from "./components/ui/nav-buttons/NavButtons";
 import {Route, Switch} from "react-router-dom";
+import Sell from "./components/pages/Sell/Sell";
 
 const AppContainer = () => (
     <React.Fragment>
@@ -20,7 +21,7 @@ const AppContainer = () => (
                      <Work workItems={workItems}/>
                 </Route>
                 <Route path="/sell">
-                    <div>sell page</div>
+                    <Sell sellItems={sellItems}/>
                 </Route>
             </Switch>
         </div>
@@ -48,3 +49,24 @@ const workItems = [
         rate: '15'
     },
 ];
+
+
+const sellItems = [
+    {
+        image: '',
+        name: 'Lunch Meal',
+        price: '5'
+    },
+    {
+        image: '',
+        name: 'Dinner Meal',
+        price: '10'
+    },
+    {
+        image: '',
+        name: 'Beverage',
+        price: '1'
+    }
+];
+
+
