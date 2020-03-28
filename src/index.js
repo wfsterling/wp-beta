@@ -15,7 +15,7 @@ const configureStore = (initialState) => {
 };
 
 const store = configureStore({
-
+    // isMenuOpen: false
 });
 
 ReactDOM.render(

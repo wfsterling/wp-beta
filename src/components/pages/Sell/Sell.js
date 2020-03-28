@@ -6,7 +6,7 @@ import SellItem from "../../ui/sell-item/SellItem";
 function Sell(props) {
     const sellItems = [];
     props.sellItems.forEach(item => {
-        sellItems.push(<SellItem item={item} key={item.datetime}/>)
+        sellItems.push(<SellItem key={item.name} item={item}/>)
     });
 
     return (

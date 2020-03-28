@@ -1,14 +1,39 @@
-import React from 'react';
+import React     from 'react';
 import PropTypes from 'prop-types';
 import './Menu.scss';
+import MenuItem from "../menu-item/MenuItem";
 
-const Menu = () => (
-  <div className="menu">
-    menu Component
-  </div>
-);
+function Menu(props) {
 
-Menu.propTypes = {};
+    const menuTabs = [
+        {
+            name: 'Worker',
+            url: '/work'
+        },
+        {
+            name: 'Employer',
+            url: '/'
+        }
+    ];
+
+    function handleCloseMenuClick(){
+        props.setIsMenuOpen(false);
+    }
+
+    const menuItems = menuTabs.map(tab => <MenuItem key={tab.name} name={tab.name} url={tab.url}/>);
+
+    return (<div className="menu">
+            {menuItems}
+            <div className='back-button-container' onClick={handleCloseMenuClick}>
+                <i className='fa fa-arrow-left'></i>
+            </div>
+        </div>
+    )
+}
+
+Menu.propTypes = {
+    setIsMenuOpen: PropTypes.func.isRequired
+};
 
 Menu.defaultProps = {};
 

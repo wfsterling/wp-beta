@@ -1,26 +1,33 @@
 import React from 'react';
 import './Navbar.scss';
 import 'font-awesome/css/font-awesome.min.css';
-
+import PropTypes from 'prop-types';
 import Image from '../../static/images/wolf-pack-white-no-text.png'
+import {Link} from "react-router-dom";
 
 
 
 
-function Navbar() {
+function Navbar(props) {
+
+    function handleMenuOpenClick(){
+        props.setIsMenuOpen(true);
+    }
 
     return (<div className="navbar">
         <div className="navbar-container">
-            <div><i className="fa fa-bars"></i></div>
+            <div><i className="fa fa-bars" onClick={handleMenuOpenClick}> </i></div>
             <img className="navbar-image" src={Image} alt={"Error"}/>
-            <div><i className="fa fa-home"></i></div>
+            <Link to='/'><i className='fa fa-home'> </i></Link>
         </div>
         <div className="navbar-image-container">
         </div>
     </div>);
 }
 
-Navbar.propTypes = {};
+Navbar.propTypes = {
+    setIsMenuOpen: PropTypes.func.isRequired
+};
 
 Navbar.defaultProps = {};
 

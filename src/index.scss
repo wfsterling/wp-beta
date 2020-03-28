@@ -8,11 +8,13 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow: auto;
 }
 
 html{
   min-height: 100vh;
   width: 100%;
+  overflow: auto;
 }
 
 * {
