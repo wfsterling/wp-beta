@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Work.scss';
 import WorkItem from "../../ui/work-item/WorkItem";
+import {Link} from "react-router-dom";
 
 function Work(props) {
     const workItems = [];
@@ -13,7 +14,7 @@ function Work(props) {
         <div className='container'>
             <div className='row full-center'>
                 <br/>
-                <a href='/'><span className='fa fa-plus-square'/> ADD WORK ITEM</a>
+                <Link to={"/work/create"}><span className='fa fa-plus-square'/> ADD WORK ITEM</Link>
             </div>
             {workItems}
         </div>
@@ -21,7 +22,8 @@ function Work(props) {
 }
 
 Work.propTypes = {
-    workItems: PropTypes.array
+    workItems: PropTypes.array,
+    url: PropTypes.string
 };
 
 Work.defaultProps = {};

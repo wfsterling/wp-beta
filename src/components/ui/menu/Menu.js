@@ -8,11 +8,19 @@ function Menu(props) {
     const menuTabs = [
         {
             name: 'Worker',
-            url: '/work'
+            url: '/'
         },
         {
             name: 'Employer',
             url: '/'
+        },
+        {
+            name: 'Create Work Item',
+            url: '/work/create'
+        },
+        {
+            name: 'Create Sell Item',
+            url: '/work/sell'
         }
     ];
 

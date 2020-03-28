@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom'
 function NavButtons() {
 
     const location = useLocation();
-    console.log(location.pathname);
     const extraWorkClass = location.pathname === '/work' ? 'nav-button-active': '';
     const extraSellClass = location.pathname === '/sell' ? 'nav-button-active': '';
 

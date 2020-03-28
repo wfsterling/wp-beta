@@ -8,26 +8,34 @@ import {Route, Switch} from "react-router-dom";
 import Sell from "./components/pages/Sell/Sell";
 import Menu from "./components/ui/menu/Menu";
 import Home from "./components/pages/Home/Home";
+import CreateWorkItem from "./components/pages/CreateWorkItem/CreateWorkItem";
+import IpfsService from "./components/service/IpfsService";
 
 function AppContainer() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [navButtonsVisible, ] = useState(true);
+    const [ipfsData, setIpfsData] = useState(undefined);
 
     function setMenu(menuState){
         setIsMenuOpen(menuState);
     }
 
+    function saveToIpfs(data){
+        setIpfsData(data);
+    }
+
     const menu = isMenuOpen ? <Menu setIsMenuOpen={setMenu}/> : undefined;
+    const navButtons = navButtonsVisible ? <NavButtons/> : undefined;
 
     return (<React.Fragment>
         <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setMenu}/>
-        <NavButtons/>
+        {navButtons}
         {menu}
         <div className='content-wrapper'>
             <Switch>
                 <Route exact path="/">
-                    <div>Home page</div>
-                    <Home workItems={completedWorkItems}/>
+                    <Home completedWorkItems={completedWorkItems}/>
                 </Route>
                 <Route exact path="/work">
                     <Work workItems={workItems}/>
@@ -35,9 +43,13 @@ function AppContainer() {
                 <Route path="/sell">
                     <Sell sellItems={sellItems}/>
                 </Route>
+                <Route path="/work/create">
+                    <CreateWorkItem saveWorkItem={saveToIpfs}/>
+                </Route>
             </Switch>
         </div>
         <Footer/>
+        <IpfsService data={ipfsData}/>
 
     </React.Fragment>);
 };
@@ -51,7 +63,10 @@ const completedWorkItems = [
         rate: '12',
         isActive: false,
         isCompleted: true,
-        businessUserId: "1234"
+        businessUserId: "1234",
+        workingUserId: "4356",
+        message: "Great Work",
+        payout: 30
     },
     {
         datetime: new Date(2020, 9, 9, 9, 0),
@@ -59,7 +74,9 @@ const completedWorkItems = [
         rate: '15',
         isActive: false,
         isCompleted: true,
-        businessUserId: "1234"
+        businessUserId: "1234",
+        workingUserId: "6587",
+        payout: 50
     },
     {
         datetime: new Date(2020, 8, 8, 8, 0),
@@ -67,7 +84,10 @@ const completedWorkItems = [
         rate: '15',
         isActive: false,
         isCompleted: true,
-        businessUserId: "1234"
+        businessUserId: "1234",
+        workingUserId: "6546",
+        message: "Always wonderful to the customers",
+        payout: 30
     },
 ];
 
