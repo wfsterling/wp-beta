@@ -17,8 +17,6 @@ function CreateWorkItem(props) {
         setNewWorkItem(item);
     };
 
-    console.log(newWorkItem);
-
     return (<div className="container">
         <div className="create-item">
             <div className='inputs-flex'>
@@ -34,13 +32,11 @@ function CreateWorkItem(props) {
                 <div className='work-input'>
                     Rate: <input onChange={e => setNewWorkItemAttribute('rate', e.target.value)}/>
                 </div>
-                <button onClick={props.saveWorkItem}>Save</button>
+                <button onClick={() => props.saveWorkItem(newWorkItem)}>Save</button>
             </div>
         </div>
-
-
     </div>)
-};
+}
 
 CreateWorkItem.propTypes = {
     saveWorkItem: PropTypes.func.isRequired

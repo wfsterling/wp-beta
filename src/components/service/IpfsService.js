@@ -46,10 +46,10 @@ class IpfsService extends React.Component {
                 }
             }
         ).then(function (response) {
-            console.log(response);
+            // console.log(response);
             //handle response here
         }).catch(function (error) {
-            console.error(error);
+            // console.error(error);
             //handle error here
         });
     };
