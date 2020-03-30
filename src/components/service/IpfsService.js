@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+
 const axios = require('axios');
 
 class IpfsService extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.pinFileToIPFS = this.pinFileToIPFS.bind(this);
+    }
 
     componentDidUpdate(prevProps) {
         if (prevProps.data !== this.props.data) {
@@ -14,6 +21,8 @@ class IpfsService extends React.Component {
 
     pinFileToIPFS = (data) => {
         const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
+        const history = this.props.history;
+
         axios.post(
             url,
             data,
@@ -26,6 +35,7 @@ class IpfsService extends React.Component {
             }
         ).then(function (response) {
             console.log(response);
+            history.goBack();
             //handle response here
         }).catch(function (error) {
             console.error(error);
@@ -67,4 +77,4 @@ IpfsService.propTypes = {
 IpfsService.defaultProps = {};
 
 
-export default IpfsService;
+export default withRouter(IpfsService);

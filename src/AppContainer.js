@@ -10,6 +10,7 @@ import Menu from "./components/ui/menu/Menu";
 import Home from "./components/pages/Home/Home";
 import CreateWorkItem from "./components/pages/CreateWorkItem/CreateWorkItem";
 import IpfsService from "./components/service/IpfsService";
+import CreateSellItem from "./components/pages/CreateSellItem/CreateSellItem";
 
 function AppContainer() {
 
@@ -40,11 +41,14 @@ function AppContainer() {
                 <Route exact path="/work">
                     <Work workItems={workItems}/>
                 </Route>
-                <Route path="/sell">
-                    <Sell sellItems={sellItems}/>
-                </Route>
                 <Route path="/work/create">
                     <CreateWorkItem saveWorkItem={saveToIpfs}/>
+                </Route>
+                <Route exact path="/sell">
+                    <Sell sellItems={sellItems}/>
+                </Route>
+                <Route path="/sell/create">
+                    <CreateSellItem saveSellItem={saveToIpfs}/>
                 </Route>
             </Switch>
         </div>
