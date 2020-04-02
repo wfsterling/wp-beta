@@ -10,6 +10,7 @@ import Menu from "./components/ui/menu/Menu";
 import Home from "./components/pages/Home/Home";
 import CreateWorkItem from "./components/pages/CreateWorkItem/CreateWorkItem";
 import IpfsService from "./components/service/IpfsService";
+import Contract from "./components/pages/Contract/Contract";
 
 function AppContainer() {
 
@@ -45,6 +46,9 @@ function AppContainer() {
                 </Route>
                 <Route path="/work/create">
                     <CreateWorkItem saveWorkItem={saveToIpfs}/>
+                </Route>
+                <Route path="/contract">
+                    <Contract/>
                 </Route>
             </Switch>
         </div>
