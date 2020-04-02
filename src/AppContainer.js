@@ -8,6 +8,7 @@ import {Route, Switch} from "react-router-dom";
 import Sell from "./components/pages/Sell/Sell";
 import Menu from "./components/ui/menu/Menu";
 import Home from "./components/pages/Home/Home";
+import Onboard from "./components/pages/Onboard/Onboard";
 import CreateWorkItem from "./components/pages/CreateWorkItem/CreateWorkItem";
 import IpfsService from "./components/service/IpfsService";
 
@@ -45,6 +46,12 @@ function AppContainer() {
                 </Route>
                 <Route path="/work/create">
                     <CreateWorkItem saveWorkItem={saveToIpfs}/>
+                </Route>
+                {/* <Route path="/admin">
+                    <Admin/>
+                </Route> */}
+                <Route path="/onboard">
+                    <Onboard onboardItems={saveToIpfs}/>
                 </Route>
             </Switch>
         </div>
@@ -126,6 +133,15 @@ const sellItems = [
         name: 'Beverage',
         price: '1'
     }
+];
+
+const onboardItems = [
+    {
+        address: '',
+        balance: 'Lunch Meal',
+        username: '5',
+        password: '123'
+    },
 ];
 
 
