@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.2.1",
     "abis": "^1.0.0",
     "axios": "^0.19.2",
+    "bs58": "^4.0.1",
     "dependencies": "0.0.1",
     "font-awesome": "^4.7.0",
     "form-data": "^3.0.0",

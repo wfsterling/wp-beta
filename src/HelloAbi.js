@@ -34,5 +34,24 @@ export const HelloAbi = [
         payable: false,
         stateMutability: "nonpayable",
         type: "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "metadata",
+                "type": "string"
+            }
+        ],
+        "name": "addFoodItems",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
     }
 ];

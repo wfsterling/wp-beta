@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import './CreateSellItem.scss';
+import TextField from "@material-ui/core/TextField";
+import Checkbox from "@material-ui/core/Checkbox";
+import Button from "@material-ui/core/Button";
 
 function CreateSellItem(props) {
 
@@ -20,15 +23,23 @@ function CreateSellItem(props) {
         <div className="create-item">
             <div className='inputs-flex'>
                 <div className='work-input'>
-                    Description: <input onChange={e => setNewSaleItemAttribute('description', e.target.value)}/>
+                    <TextField id="standard-basic" label="Description" onChange={e => setNewSaleItemAttribute('description', e.target.value)}/>
                 </div>
                 <div className='work-input'>
-                    Cost: <input type='number' value={newSaleItem.cost} onChange={e => setNewSaleItemAttribute('cost', e.target.value)}/>
+                    <TextField id="standard-basic" label="Cost (USD)" onChange={e => setNewSaleItemAttribute('cost', e.target.value)}/>
                 </div>
+                <br/>
+                <div className='work-input'>Active</div>
                 <div className='work-input'>
-                    Active: <input type="checkbox" checked={newSaleItem.isActive} onChange={e => setNewSaleItemAttribute('isActive', !newSaleItem.isActive)}/>
+                    <Checkbox
+                        checked={newSaleItem.isActive}
+                        onChange={e => {setNewSaleItemAttribute('isActive', !newSaleItem.isActive)}}
+                    />
                 </div>
-                <button onClick={() => props.saveSellItem(newSaleItem)}>Save</button>
+                <br/>
+                <Button variant="contained" color="primary" onClick={() => props.saveSellItem(newSaleItem)}>
+                    SAVE
+                </Button>
             </div>
         </div>
     </div>)
