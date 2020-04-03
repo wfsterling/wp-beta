@@ -36,6 +36,7 @@ function Menu(props) {
         key={tab.name}
         name={tab.name}
         url={tab.url}
+        closeMenu={handleCloseMenuClick}
     />);
 
     return (<div className="menu">

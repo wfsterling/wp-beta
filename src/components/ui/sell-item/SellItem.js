@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './SellItem.scss';
+import {Link} from "react-router-dom";
 
 function SellItem(props) {
 
@@ -9,7 +10,7 @@ function SellItem(props) {
         <div>{props.item.name}</div>
         <div>{props.item.price}</div>
         <div>
-            <span className='fa fa-plus'></span>
+            <Link to='/sell/scan' className='fa fa-plus'/>
         </div>
     </div>
 };

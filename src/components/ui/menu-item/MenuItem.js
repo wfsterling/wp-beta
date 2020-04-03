@@ -5,8 +5,8 @@ import {Link} from "react-router-dom";
 
 const MenuItem = (props) => (
     <div>
-        <div class='menu-item'>
-            <Link to={props.url} className='menu-item-container'>
+        <div className='menu-item'>
+            <Link to={props.url} className='menu-item-container' onClick={props.closeMenu}>
                 <span>{props.name}</span>
                 <i className='fa fa-arrow-right'/>
             </Link>
@@ -16,8 +16,9 @@ const MenuItem = (props) => (
 );
 
 MenuItem.propTypes = {
-    name: PropTypes.string,
-    url: PropTypes.string
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    closeMenu: PropTypes.func.isRequired
 };
 
 MenuItem.defaultProps = {};

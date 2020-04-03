@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Sell.scss';
 import SellItem from "../../ui/sell-item/SellItem";
+import {Link} from "react-router-dom";
 
 function Sell(props) {
     const sellItems = [];
@@ -13,7 +14,7 @@ function Sell(props) {
         <div className='container'>
             <div className='row full-center'>
                 <br/>
-                <a href='/'><span className='fa fa-plus-square'/> ADD SELL ITEM</a>
+                <Link to={"/sell/create"}><span className='fa fa-plus-square'/> ADD SELL ITEM</Link>
             </div>
             {sellItems}
         </div>

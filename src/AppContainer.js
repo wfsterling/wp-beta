@@ -11,6 +11,8 @@ import Home from "./components/pages/Home/Home";
 import CreateWorkItem from "./components/pages/CreateWorkItem/CreateWorkItem";
 import IpfsService from "./components/service/IpfsService";
 import Contract from "./components/pages/Contract/Contract";
+import CreateSellItem from "./components/pages/CreateSellItem/CreateSellItem";
+import Scan from "./components/pages/Scan/Scan";
 
 function AppContainer() {
 
@@ -41,21 +43,27 @@ function AppContainer() {
                 <Route exact path="/work">
                     <Work workItems={workItems}/>
                 </Route>
-                <Route path="/sell">
-                    <Sell sellItems={sellItems}/>
-                </Route>
                 <Route path="/work/create">
                     <CreateWorkItem saveWorkItem={saveToIpfs}/>
                 </Route>
                 <Route path="/contract">
                     <Contract/>
                 </Route>
+                <Route exact path="/sell">
+                    <Sell sellItems={sellItems}/>
+                </Route>
+                <Route path="/sell/create">
+                    <CreateSellItem saveSellItem={saveToIpfs}/>
+                </Route>
+                <Route path="/sell/scan">
+                    <Scan/>
+                </Route>
             </Switch>
         </div>
         <Footer/>
         <IpfsService data={ipfsData}/>
 
-    </React.Fragment>);
+    </React.Fragment>)
 };
 
 export default AppContainer;
