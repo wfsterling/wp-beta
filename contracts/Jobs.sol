@@ -12,6 +12,16 @@ contract Jobs is WolfToken {
         uint balance;
     }
 
+    struct Vendor {
+        string metadata;
+        address account;
+    }
+
+    struct FoodItem {
+        string metadata;
+        address vendor;
+    }
+
     struct Worker {
         // uint index;
         address account;
@@ -37,6 +47,8 @@ contract Jobs is WolfToken {
 
     mapping(address => Employer) public employers;
     mapping(address => Worker) public workers;
+    // mapping(uint256 => FoodItem) public foodItems;
+
     Gig[] public gigs;
 
     event NewEmployer(address account, bytes32 metadata);
@@ -46,6 +58,8 @@ contract Jobs is WolfToken {
     event WorkerApplied(address worker, uint idx);
     event WorkerApproved(address worker, uint idx);
     event WorkDone(address worker, uint idx);
+
+    event NewFoodItem(address vendor, string metadata);
 
     // event MintedWolfToken(address account, uint amount);
     event RedeemedWolfToken(address account, uint amount);
@@ -67,6 +81,15 @@ contract Jobs is WolfToken {
     modifier onlyEmployer() {
         require(employers[msg.sender].account != address(0));
         _;
+    }
+
+    function addFoodItems(string memory metadata) public returns (address) {
+        FoodItem memory f;
+        f.metadata = metadata;
+        f.vendor = msg.sender;
+        // _mint(msg.sender, 100);
+        emit NewFoodItem(msg.sender, metadata);
+        return f.vendor;
     }
 
     function registerEmployer(bytes32 metadata, address employer) onlyOwner public returns (address) {
