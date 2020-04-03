@@ -1,34 +1,46 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react'
 import QrReader from 'react-qr-reader'
+import { useHistory } from "react-router-dom";
 
-class Scan extends Component {
-    state = {
-        result: 'No result'
-    };
+function Scan() {
 
-    handleScan = data => {
+    const history = useHistory();
+
+    const [result, setResult] = useState('No Result');
+
+    const handleScan = data => {
+        console.log(data, validURL(data));
         if (data) {
-            this.setState({
-                result: data
-            })
+            setResult(data);
+            window.location = data;
         }
     };
-    handleError = err => {
+
+    function validURL(str) {
+        const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+        return !!pattern.test(str);
+    }
+
+    const handleError = err => {
         console.error(err)
     };
-    render() {
-        return (
-            <div>
-                <QrReader
-                    delay={300}
-                    onError={this.handleError}
-                    onScan={this.handleScan}
-                    style={{ width: '100%' }}
-                />
-                <p>{this.state.result}</p>
-            </div>
-        )
-    }
+
+    return (
+        <div>
+            <QrReader
+                delay={300}
+                onError={handleError}
+                onScan={handleScan}
+                style={{ width: '100%' }}
+            />
+            <p>{result}</p>
+        </div>
+    )
 }
 
 export default Scan;

@@ -13,6 +13,7 @@ import IpfsService from "./components/service/IpfsService";
 import Contract from "./components/pages/Contract/Contract";
 import CreateSellItem from "./components/pages/CreateSellItem/CreateSellItem";
 import Scan from "./components/pages/Scan/Scan";
+import Transaction from "./components/pages/Transaction/Transaction";
 
 function AppContainer() {
 
@@ -58,6 +59,7 @@ function AppContainer() {
                 <Route path="/sell/scan">
                     <Scan/>
                 </Route>
+                <Route path="/sell/:itemId" component={Transaction}/>
             </Switch>
         </div>
         <Footer/>

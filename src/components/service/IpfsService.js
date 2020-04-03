@@ -11,6 +11,7 @@ class IpfsService extends React.Component {
         this.pinFileToIPFS = this.pinFileToIPFS.bind(this);
     }
 
+    // useEffect!
     componentDidUpdate(prevProps) {
         if (prevProps.data !== this.props.data) {
             if(this.props.data !== undefined){
