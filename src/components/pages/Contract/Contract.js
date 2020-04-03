@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import './Contract.scss';
 import Web3 from "web3";
-import {HelloAbi} from "../../../HelloAbi";
 import {WolfpackAbi} from "../../../WolfpackAbi";
 import bs58 from 'bs58';
 
@@ -37,15 +36,15 @@ function Contract() {
         return "0x"+bs58.decode(ipfsListing).slice(2).toString('hex')
     };
 
-    const getIpfsHashFromBytes32 = (bytes32Hex) => {
-        // Add our default ipfs values for first 2 bytes:
-        // function:0x12=sha2, size:0x20=256 bits
-        // and cut off leading "0x"
-        const hashHex = "1220" + bytes32Hex.slice(2);
-        const hashBytes = Buffer.from(hashHex, 'hex');
-        const hashStr = bs58.encode(hashBytes);
-        return hashStr
-    };
+    // const getIpfsHashFromBytes32 = (bytes32Hex) => {
+    //     // Add our default ipfs values for first 2 bytes:
+    //     // function:0x12=sha2, size:0x20=256 bits
+    //     // and cut off leading "0x"
+    //     const hashHex = "1220" + bytes32Hex.slice(2);
+    //     const hashBytes = Buffer.from(hashHex, 'hex');
+    //     const hashStr = bs58.encode(hashBytes);
+    //     return hashStr
+    // };
 
     return (
         <div className="contract">

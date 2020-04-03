@@ -1,18 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './WorkItem.scss';
+import {Link} from "react-router-dom";
 
 function WorkItem(props) {
 
     return <div className="work-item">
-        <div>
-            {getDayString(props.item.datetime.getDay())} : Time (
-            {props.item.datetime.getHours()} :
-            {(props.item.datetime.getMinutes() < 10 ? "0" : "") + props.item.datetime.getMinutes()}
-            )
+        <div className="work-item-text">
+            <div className='work-item-day'>
+                {getDayString(props.item.date.getDay())} : Time (
+                {props.item.startTime.getHours()} :
+                {(props.item.startTime.getMinutes() < 10 ? "0" : "") + props.item.startTime.getMinutes()} -
+                {props.item.endTime.getHours()} :
+                {(props.item.endTime.getMinutes() < 10 ? "0" : "") + props.item.endTime.getMinutes()}
+                )
+            </div>
+            <div className='work-item-description'>{props.item.description}</div>
+            <div className='work-item-rate'>
+                <span className='fa fa-usd'> </span>
+                &nbsp;{props.item.rate} / hour
+            </div>
         </div>
-        <div>{props.item.description}</div>
-        <div>{props.item.rate}</div>
+        <div className="work-item-icon">
+            <Link className='fa fa-arrow-circle-o-right'> </Link>
+        </div>
     </div>
 };
 

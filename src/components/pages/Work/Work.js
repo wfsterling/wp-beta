@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 function Work(props) {
     const workItems = [];
     props.workItems.forEach(item => {
-        workItems.push(<WorkItem item={item} key={item.datetime}/>)
+        workItems.push(<WorkItem item={item} key={item.description}/>)
     });
 
     return (

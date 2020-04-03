@@ -15,6 +15,10 @@ import CreateSellItem from "./components/pages/CreateSellItem/CreateSellItem";
 import Scan from "./components/pages/Scan/Scan";
 import Transaction from "./components/pages/Transaction/Transaction";
 
+import SandwichImage from './components/static/images/sandwich.png'
+import TacoImage from './components/static/images/taco.png'
+import CoffeeImage from './components/static/images/coffee.png'
+
 function AppContainer() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -107,17 +111,23 @@ const completedWorkItems = [
 
 const workItems = [
     {
-        datetime: new Date(2020, 10, 10, 10, 0),
+        date: new Date(2020, 10, 10, 10, 0),
+        startTime: new Date(2020, 10, 10, 12, 0),
+        endTime: new Date(2020, 10, 10, 16, 0),
         description: 'Dishwasher',
         rate: '15'
     },
     {
-        datetime: new Date(2020, 9, 9, 9, 0),
+        date: new Date(2020, 10, 12, 10, 0),
+        startTime: new Date(2020, 10, 12, 12, 0),
+        endTime: new Date(2020, 10, 12, 14, 0),
         description: 'Rolling silverware',
         rate: '15'
     },
     {
-        datetime: new Date(2020, 8, 8, 8, 0),
+        date: new Date(2020, 10, 14, 10, 0),
+        startTime: new Date(2020, 10, 14, 16, 0),
+        endTime: new Date(2020, 10, 14, 20, 0),
         description: 'Cleaning',
         rate: '15'
     },
@@ -126,17 +136,17 @@ const workItems = [
 
 const sellItems = [
     {
-        image: '',
+        imageUrl: SandwichImage,
         name: 'Lunch Meal',
         price: '5'
     },
     {
-        image: '',
+        imageUrl: TacoImage,
         name: 'Dinner Meal',
         price: '10'
     },
     {
-        image: '',
+        imageUrl: CoffeeImage,
         name: 'Beverage',
         price: '1'
     }

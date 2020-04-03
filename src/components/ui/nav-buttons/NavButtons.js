@@ -9,6 +9,10 @@ function NavButtons() {
     const extraWorkClass = location.pathname === '/work' ? 'nav-button-active': '';
     const extraSellClass = location.pathname === '/sell' ? 'nav-button-active': '';
 
+    if(location.pathname === '/sell/scan'){
+        return <span/>
+    }
+
     return (<div className="nav-button-container">
         <Link to="/work" className={`nav-button ${extraWorkClass}`}>Work</Link>
         <Link to="/sell" className={`nav-button ${extraSellClass}`}>Sell</Link>

@@ -4,4 +4,31 @@
   box-shadow: 0 1px #ccc;
   border-radius: 10px;
   padding: 10px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.work-item-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.work-item-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.work-item-day{
+
+}
+.work-item-description{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.work-item-rate{
+
 }

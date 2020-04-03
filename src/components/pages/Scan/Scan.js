@@ -1,17 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import QrReader from 'react-qr-reader'
-import { useHistory } from "react-router-dom";
 
 function Scan() {
-
-    const history = useHistory();
-
-    const [result, setResult] = useState('No Result');
 
     const handleScan = data => {
         console.log(data, validURL(data));
         if (data) {
-            setResult(data);
             window.location = data;
         }
     };
@@ -27,7 +21,8 @@ function Scan() {
     }
 
     const handleError = err => {
-        console.error(err)
+        console.error(err);
+        alert(err);
     };
 
     return (
@@ -38,7 +33,6 @@ function Scan() {
                 onScan={handleScan}
                 style={{ width: '100%' }}
             />
-            <p>{result}</p>
         </div>
     )
 }

@@ -6,9 +6,11 @@ import {Link} from "react-router-dom";
 function SellItem(props) {
 
     return <div className="sell-item" key={props.item.name}>
-        <div>{props.item.image}</div>
-        <div>{props.item.name}</div>
-        <div>{props.item.price}</div>
+        <div className='sell-item-image'>
+            <img className='sell-item-image' src={props.item.imageUrl} alt="Sell Item"/>
+        </div>
+        <div className='sell-item-name'>{props.item.name}</div>
+        <div className='sell-item-price'>${props.item.price}</div>
         <div>
             <Link to='/sell/scan' className='fa fa-plus'/>
         </div>
