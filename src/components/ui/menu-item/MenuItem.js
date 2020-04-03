@@ -5,10 +5,12 @@ import {Link} from "react-router-dom";
 
 const MenuItem = (props) => (
     <div>
-        <Link to={props.url} className='menu-item-container'>
-            <span>{props.name}</span>
-            <i className='fa fa-arrow-right'/>
-        </Link>
+        <div class='menu-item'>
+            <Link to={props.url} className='menu-item-container'>
+                <span>{props.name}</span>
+                <i className='fa fa-arrow-right'/>
+            </Link>
+        </div>
         <div className='menu-divider'/>
     </div>
 );

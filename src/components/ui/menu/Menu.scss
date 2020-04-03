@@ -1,5 +1,7 @@
 .menu {
-  height: 100%;
+  overflow-y: auto;
+  max-height: 100vh;
+  min-height: 100%;
   width: 350px;
   padding: 20px;
   background-color: #424242;

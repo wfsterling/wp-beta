@@ -5,9 +5,10 @@
   display: flex;
   justify-content: space-between;
 
-  :hover {
-    text-decoration: underline;
-  }
+}
+
+.menu-item:hover {
+  background-color: #555;
 }
 
 .menu-divider {

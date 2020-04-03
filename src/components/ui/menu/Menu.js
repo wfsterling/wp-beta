@@ -21,6 +21,10 @@ function Menu(props) {
         {
             name: 'Create Sell Item',
             url: '/work/sell'
+        },
+        {
+            name: 'Contract',
+            url: '/contract'
         }
     ];
 
@@ -28,7 +32,11 @@ function Menu(props) {
         props.setIsMenuOpen(false);
     }
 
-    const menuItems = menuTabs.map(tab => <MenuItem key={tab.name} name={tab.name} url={tab.url}/>);
+    const menuItems = menuTabs.map(tab => <MenuItem
+        key={tab.name}
+        name={tab.name}
+        url={tab.url}
+    />);
 
     return (<div className="menu">
             {menuItems}
