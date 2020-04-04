@@ -1,6 +1,28 @@
 .footer {
-  background-color: #11009b;
+  background: linear-gradient(#0D0098, #4C00B5);
   width: 100%;
-  height: 20px;
+  height: 60px;
   margin-bottom: -3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-inside {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-text{
+  font-size: 0.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.footer-image{
+  height: 40px;
+  width: auto;
+  margin: 10px 20px;
 }

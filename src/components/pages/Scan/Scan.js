@@ -26,7 +26,7 @@ function Scan() {
     };
 
     return (
-        <div>
+        <div className='container'>
             <QrReader
                 delay={300}
                 onError={handleError}

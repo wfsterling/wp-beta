@@ -18,6 +18,7 @@ import Transaction from "./components/pages/Transaction/Transaction";
 import SandwichImage from './components/static/images/sandwich.png'
 import TacoImage from './components/static/images/taco.png'
 import CoffeeImage from './components/static/images/coffee.png'
+import ActivateWork from "./components/pages/ActivateWork/ActivateWork";
 
 function AppContainer() {
 
@@ -63,7 +64,8 @@ function AppContainer() {
                 <Route path="/sell/scan">
                     <Scan/>
                 </Route>
-                <Route path="/sell/:itemId" component={Transaction}/>
+                <Route path="/sell/:itemId" render={(props) => <Transaction sellItems={sellItems} {...props} />}/>
+                <Route path="/work/activate/:itemId" render={(props) => <ActivateWork workItems={workItems} {...props} />}/>
             </Switch>
         </div>
         <Footer/>
@@ -111,6 +113,7 @@ const completedWorkItems = [
 
 const workItems = [
     {
+        id: 1,
         date: new Date(2020, 10, 10, 10, 0),
         startTime: new Date(2020, 10, 10, 12, 0),
         endTime: new Date(2020, 10, 10, 16, 0),
@@ -118,6 +121,7 @@ const workItems = [
         rate: '15'
     },
     {
+        id: 2,
         date: new Date(2020, 10, 12, 10, 0),
         startTime: new Date(2020, 10, 12, 12, 0),
         endTime: new Date(2020, 10, 12, 14, 0),
@@ -125,6 +129,7 @@ const workItems = [
         rate: '15'
     },
     {
+        id: 3,
         date: new Date(2020, 10, 14, 10, 0),
         startTime: new Date(2020, 10, 14, 16, 0),
         endTime: new Date(2020, 10, 14, 20, 0),
@@ -136,16 +141,19 @@ const workItems = [
 
 const sellItems = [
     {
+        id: 1,
         imageUrl: SandwichImage,
         name: 'Lunch Meal',
         price: '5'
     },
     {
+        id: 2,
         imageUrl: TacoImage,
         name: 'Dinner Meal',
         price: '10'
     },
     {
+        id: 3,
         imageUrl: CoffeeImage,
         name: 'Beverage',
         price: '1'

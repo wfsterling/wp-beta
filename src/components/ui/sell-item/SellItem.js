@@ -15,7 +15,7 @@ function SellItem(props) {
             <Link to='/sell/scan' className='fa fa-plus'/>
         </div>
     </div>
-};
+}
 
 SellItem.propTypes = {
     item: PropTypes.object

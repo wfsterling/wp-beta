@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 
 function WorkItem(props) {
 
+    const activateUrl = "/work/activate/" + props.item.id;
+
     return <div className="work-item">
         <div className="work-item-text">
             <div className='work-item-day'>
@@ -22,7 +24,7 @@ function WorkItem(props) {
             </div>
         </div>
         <div className="work-item-icon">
-            <Link className='fa fa-arrow-circle-o-right'> </Link>
+            <Link to={activateUrl} className='fa fa-arrow-circle-o-right'> </Link>
         </div>
     </div>
 };
