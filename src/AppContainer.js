@@ -15,10 +15,16 @@ import CreateSellItem from "./components/pages/CreateSellItem/CreateSellItem";
 import Scan from "./components/pages/Scan/Scan";
 import Transaction from "./components/pages/Transaction/Transaction";
 
-import SandwichImage from './components/static/images/sandwich.png'
-import TacoImage from './components/static/images/taco.png'
-import CoffeeImage from './components/static/images/coffee.png'
+import SandwichImage from './components/static/images/sandwich.png';
+import TacoImage from './components/static/images/taco.png';
+import CoffeeImage from './components/static/images/coffee.png';
+import Person1Image from './components/static/images/person1.png';
+import Person2Image from './components/static/images/person2.jpg';
+import Person3Image from './components/static/images/person3.png';
 import ActivateWork from "./components/pages/ActivateWork/ActivateWork";
+import Admin from "./components/pages/Admin/Admin";
+import PinData from "./components/pages/PinData/PinData";
+import Wallet from "./components/pages/Wallet/Wallet";
 
 function AppContainer() {
 
@@ -61,10 +67,13 @@ function AppContainer() {
                 <Route path="/sell/create">
                     <CreateSellItem saveSellItem={saveToIpfs}/>
                 </Route>
-                <Route path="/sell/scan">
-                    <Scan/>
+                <Route path="/wallet/:walletAddress" render={(props) => <Wallet {...props} />} />
+                <Route path="/scan" render={(props) => <Scan {...props} />} />
+                <Route path="/admin">
+                    <Admin/>
                 </Route>
                 <Route path="/sell/:itemId" render={(props) => <Transaction sellItems={sellItems} {...props} />}/>
+                <Route path="/pindata" render={(props) => <PinData saveDataToIpfs={saveToIpfs} {...props} />}/>
                 <Route path="/work/activate/:itemId" render={(props) => <ActivateWork workItems={workItems} {...props} />}/>
             </Switch>
         </div>
@@ -85,6 +94,8 @@ const completedWorkItems = [
         isCompleted: true,
         businessUserId: "1234",
         workingUserId: "4356",
+        firstName: "Jill",
+        imageUrl: Person1Image,
         message: "Great Work",
         payout: 30
     },
@@ -96,6 +107,9 @@ const completedWorkItems = [
         isCompleted: true,
         businessUserId: "1234",
         workingUserId: "6587",
+        imageUrl: Person2Image,
+        firstName: "Bob",
+        message: "Hard worker",
         payout: 50
     },
     {
@@ -106,6 +120,8 @@ const completedWorkItems = [
         isCompleted: true,
         businessUserId: "1234",
         workingUserId: "6546",
+        firstName: "Jan",
+        imageUrl: Person3Image,
         message: "Always wonderful to the customers",
         payout: 30
     },

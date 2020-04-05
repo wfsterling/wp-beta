@@ -22,7 +22,7 @@ class IpfsService extends React.Component {
 
     pinFileToIPFS = (data) => {
         const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
-        const history = this.props.history;
+        // const history = this.props.history;
 
         axios.post(
             url,
@@ -36,7 +36,7 @@ class IpfsService extends React.Component {
             }
         ).then(function (response) {
             console.log(response);
-            history.goBack();
+            // history.goBack();
             //handle response here
         }).catch(function (error) {
             console.error(error);

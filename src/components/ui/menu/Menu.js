@@ -25,6 +25,14 @@ function Menu(props) {
         {
             name: 'Contract',
             url: '/contract'
+        },
+        {
+            name: 'Admin',
+            url: '/admin'
+        },
+        {
+            name: 'Scan',
+            url: '/scan'
         }
     ];
 

@@ -12,7 +12,7 @@ function SellItem(props) {
         <div className='sell-item-name'>{props.item.name}</div>
         <div className='sell-item-price'>${props.item.price}</div>
         <div>
-            <Link to='/sell/scan' className='fa fa-plus'/>
+            <Link to='/scan' className='fa fa-plus'/>
         </div>
     </div>
 }

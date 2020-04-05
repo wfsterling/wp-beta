@@ -1,1 +1,32 @@
-.Scan {}
+.page-container{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.scan-button{
+  margin: 15px !important;
+  color: white !important;
+}
+
+.scan-container{
+  color: #aaa;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+@media (min-width: 768px) {
+  .scan-container {
+    width: 75%;
+  }
+}
+@media (min-width: 992px) {
+  .scan-container {
+    width:50%;
+  }
+}
+@media (min-width: 1200px) {
+  .scan-container {
+    width: 25%;
+  }
+}

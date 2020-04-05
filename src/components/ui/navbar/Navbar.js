@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 import Image from '../../static/images/wolf-pack-white-no-text.png'
 import {Link} from "react-router-dom";
 
-
-
-
 function Navbar(props) {
 
     function handleMenuOpenClick(){

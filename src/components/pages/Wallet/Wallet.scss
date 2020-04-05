@@ -1,0 +1,13 @@
+.wallet-item {
+  border: solid #ccc 2px;
+  box-shadow: 0 1px #ccc;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.wallet-flex{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}

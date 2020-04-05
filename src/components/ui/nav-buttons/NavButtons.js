@@ -9,7 +9,11 @@ function NavButtons() {
     const extraWorkClass = location.pathname === '/work' ? 'nav-button-active': '';
     const extraSellClass = location.pathname === '/sell' ? 'nav-button-active': '';
 
-    if(location.pathname === '/sell/scan'){
+    const locationsWithoutNavButtons = ['/scan', '/admin', '/pindata', '/wallet'];
+
+    if(locationsWithoutNavButtons.indexOf(location.pathname) > -1){
+        return <span/>
+    }else if(locationsWithoutNavButtons.indexOf(location.pathname.split('/')[1])){
         return <span/>
     }
 

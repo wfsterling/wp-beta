@@ -1,24 +1,15 @@
-import React from 'react'
-import QrReader from 'react-qr-reader'
+import React from 'react';
+import QrReader from 'react-qr-reader';
+import './Scan.scss';
+import Button from "@material-ui/core/Button";
 
-function Scan() {
+function Scan(props) {
 
     const handleScan = data => {
-        console.log(data, validURL(data));
         if (data) {
             window.location = data;
         }
     };
-
-    function validURL(str) {
-        const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-        return !!pattern.test(str);
-    }
 
     const handleError = err => {
         console.error(err);
@@ -26,13 +17,24 @@ function Scan() {
     };
 
     return (
-        <div className='container'>
-            <QrReader
-                delay={300}
-                onError={handleError}
-                onScan={handleScan}
-                style={{ width: '100%' }}
-            />
+        <div className='page-container'>
+            <div className='scan-container'>
+                <QrReader
+                    delay={300}
+                    onError={handleError}
+                    onScan={handleScan}
+                    style={{ width: '100%' }}
+                />
+                Scan the QR code on the back of a wolfpack token
+                <Button className='scan-button' variant="contained" color="primary" onClick={() => window.location = '/scan'}>
+                    <span className='fa fa-qrcode'> </span> &nbsp; SCAN
+                </Button>
+                <div>
+                <Button className='scan-button' variant="outlined   " onClick={() => props.history.goBack()}>
+                    CANCEL
+                </Button>
+                </div>
+            </div>
         </div>
     )
 }

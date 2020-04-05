@@ -4,10 +4,16 @@ import './CompletedWorkItem.scss';
 
 function CompletedWorkItem(props) {
 
-    return <div className="work-item">
-        <div>You paid user id {props.item.workingUserId} ${props.item.payout}</div>
-        <div>{props.item.date}</div>
-        <div>{props.item.message}</div>
+    return <div className="completed-work-item">
+        <div>
+            <img className='completed-work-image' src={props.item.imageUrl} alt='Person Icon'/>
+        </div>
+        <div>
+            <div>You paid <b>{props.item.firstName}</b> ${props.item.payout}</div>
+            <div>{props.item.date}</div>
+            <br/>
+            <div>{props.item.message}</div>
+        </div>
     </div>
 }
 
