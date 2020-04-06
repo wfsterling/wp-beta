@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Wallet.scss';
 import web3 from "web3";
 import TextField from "@material-ui/core/TextField";

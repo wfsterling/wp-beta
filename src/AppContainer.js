@@ -25,6 +25,7 @@ import ActivateWork from "./components/pages/ActivateWork/ActivateWork";
 import Admin from "./components/pages/Admin/Admin";
 import PinData from "./components/pages/PinData/PinData";
 import Wallet from "./components/pages/Wallet/Wallet";
+import Opportunities from "./components/pages/Opportunities/Opportunities";
 
 function AppContainer() {
 
@@ -57,6 +58,9 @@ function AppContainer() {
                 </Route>
                 <Route path="/work/create">
                     <CreateWorkItem saveWorkItem={saveToIpfs}/>
+                </Route>
+                <Route path="/work/opportunities">
+                    <Opportunities workOpportunities={workOpportunities}/>
                 </Route>
                 <Route path="/contract">
                     <Contract/>
@@ -93,6 +97,7 @@ const completedWorkItems = [
         isActive: false,
         isCompleted: true,
         businessUserId: "1234",
+        businessName: "Krogers",
         workingUserId: "4356",
         firstName: "Jill",
         imageUrl: Person1Image,
@@ -106,6 +111,7 @@ const completedWorkItems = [
         isActive: false,
         isCompleted: true,
         businessUserId: "1234",
+        businessName: "Johnson's Restaurant",
         workingUserId: "6587",
         imageUrl: Person2Image,
         firstName: "Bob",
@@ -119,6 +125,7 @@ const completedWorkItems = [
         isActive: false,
         isCompleted: true,
         businessUserId: "1234",
+        businessName: "Soup Kitchen",
         workingUserId: "6546",
         firstName: "Jan",
         imageUrl: Person3Image,
@@ -176,4 +183,38 @@ const sellItems = [
     }
 ];
 
-
+const workOpportunities = [
+    {
+        datetime: new Date(2020, 10, 10, 10, 0),
+        description: 'Dishwasher',
+        rate: '12',
+        isActive: false,
+        isCompleted: false,
+        businessUserId: "1234",
+        businessName: "Krogers",
+        workingUserId: undefined,
+        payout: 30
+    },
+    {
+        datetime: new Date(2020, 9, 9, 9, 0),
+        description: 'Rolling silverware',
+        rate: '15',
+        isActive: false,
+        isCompleted: false,
+        businessUserId: "1234",
+        businessName: "Johnson's Restaurant",
+        workingUserId: undefined,
+        payout: 50
+    },
+    {
+        datetime: new Date(2020, 8, 8, 8, 0),
+        description: 'Cleaning',
+        rate: '15',
+        isActive: false,
+        isCompleted: false,
+        businessUserId: "1234",
+        businessName: "Soup Kitchen",
+        workingUserId: undefined,
+        payout: 30
+    },
+];

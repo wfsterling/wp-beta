@@ -33,6 +33,10 @@ function Menu(props) {
         {
             name: 'Scan',
             url: '/scan'
+        },
+        {
+            name: 'Opportunities',
+            url: '/work/opportunities'
         }
     ];
 
