@@ -5,7 +5,7 @@ import OpportunityItem from "../../ui/OpportunityItem/OpportunityItem";
 
 function Opportunities(props) {
 
-    const opportunities = props.workOpportunities.map(opp => <OpportunityItem opportunity={opp}/>);
+    const opportunities = props.workOpportunities.map(opp => <OpportunityItem opportunity={opp} key={opp.description}/>);
 
     return (<div className="container">
         <div className='balance-container'>

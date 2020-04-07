@@ -6,26 +6,26 @@ import MenuItem from "../menu-item/MenuItem";
 function Menu(props) {
 
     const menuTabs = [
-        {
-            name: 'Worker',
-            url: '/'
-        },
-        {
-            name: 'Employer',
-            url: '/'
-        },
+        // {
+        //     name: 'Worker',
+        //     url: '/'
+        // },
+        // {
+        //     name: 'Employer',
+        //     url: '/'
+        // },
         {
             name: 'Create Work Item',
             url: '/work/create'
         },
         {
             name: 'Create Sell Item',
-            url: '/work/sell'
+            url: '/sell/create'
         },
-        {
-            name: 'Contract',
-            url: '/contract'
-        },
+        // {
+        //     name: 'Contract',
+        //     url: '/contract'
+        // },
         {
             name: 'Admin',
             url: '/admin'

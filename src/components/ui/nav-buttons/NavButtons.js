@@ -10,10 +10,10 @@ function NavButtons() {
     const extraSellClass = location.pathname === '/sell' ? 'nav-button-active': '';
 
     const locationsWithoutNavButtons = ['/scan', '/admin', '/pindata', '/wallet'];
-
     if(locationsWithoutNavButtons.indexOf(location.pathname) > -1){
         return <span/>
-    }else if(locationsWithoutNavButtons.indexOf(location.pathname.split('/')[1])){
+    }
+    else if(location.pathname !== "/" && locationsWithoutNavButtons.indexOf(location.pathname.split('/')[1]) > -1){
         return <span/>
     }
 
