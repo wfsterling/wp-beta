@@ -13,12 +13,12 @@ contract Jobs is WolfToken {
     }
 
     struct Vendor {
-        string metadata;
+        bytes32 metadata;
         address account;
     }
 
     struct FoodItem {
-        string metadata;
+        bytes32 metadata;
         address vendor;
     }
 
@@ -59,7 +59,7 @@ contract Jobs is WolfToken {
     event WorkerApproved(address worker, uint idx);
     event WorkDone(address worker, uint idx);
 
-    event NewFoodItem(address vendor, string metadata);
+    event NewFoodItem(address vendor, bytes32 metadata);
 
     // event MintedWolfToken(address account, uint amount);
     event RedeemedWolfToken(address account, uint amount);
@@ -83,7 +83,7 @@ contract Jobs is WolfToken {
         _;
     }
 
-    function addFoodItems(string memory metadata) public returns (address) {
+    function addFoodItems(bytes32 metadata) public returns (address) {
         FoodItem memory f;
         f.metadata = metadata;
         f.vendor = msg.sender;
