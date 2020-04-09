@@ -5,7 +5,7 @@
 
 [Video Demo](https://youtu.be/FsAxfT-SO6s)
 
-[The Graph Repo] (https://github.com/nanspro/wpGraph)
+[The Graph Repo](https://github.com/nanspro/wpGraph)
 
 Please view the Wiki for additional documentation on the process we've taken for BSIC. We want to thank those who have helped us get to this point. This has been a true collaboration.
 
