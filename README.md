@@ -1,4 +1,11 @@
 # Wolf Pack
+[WolfPack Pitch Deck](https://docs.google.com/presentation/d/1i7aPo4oIa9yY5Dk9ZwJ2-AfvXaKDfk7btS3rIUtvKok/edit?usp=sharing)
+
+[Incubator Video Presentation](https://youtu.be/6-iKnvKlTZc)
+
+[Video Demo](https://youtu.be/FsAxfT-SO6s)
+
+Please view the Wiki for additional documentation on the process we've taken for BSIC. We want to thank those who have helped us get to this point. This has been a true collaboration.
 
 ## "You can't help those who want to be homeless, like most of those down on that street."
 Denver Resident
