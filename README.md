@@ -1,5 +1,5 @@
 # Wolf Pack
-[WolfPack Pitch Deck](https://docs.google.com/presentation/d/1i7aPo4oIa9yY5Dk9ZwJ2-AfvXaKDfk7btS3rIUtvKok/edit?usp=sharing)
+[WolfPack Pitch Deck](https://docs.google.com/presentation/d/1i7aPo4oIa9yY5Dk9ZwJ2-AfvXaKDfk7btS3rIUtvKok/edit?usp=sharing) With links to the Business Plan and Account Sheet
 
 [Incubator Video Presentation](https://youtu.be/6-iKnvKlTZc)
 
