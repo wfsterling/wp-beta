@@ -19,7 +19,7 @@
     "font-awesome": "^4.7.0",
     "form-data": "^3.0.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-qr-reader": "^2.2.1",
